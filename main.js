@@ -23,6 +23,7 @@ var cursors;
 var gameOver = false;
 var currentScale= 1;
 var playerHeight = 48;
+var pickupCount = 0;
 var game = new Phaser.Game(config);
 
 function preload ()
@@ -139,6 +140,9 @@ function update ()
 
 function pickupFood (player, food)
 {
+    
+    pickupCount += 1;
+    console.log(pickupCount);
     food.disableBody(true, true);
 
     currentScale += 0.25;
@@ -151,7 +155,7 @@ function pickupFood (player, food)
     var hamCount = hams.countActive(true);
 
 
-    if ((fishes.countActive(true) === 0) && (hams.countActive(true) === 0)) {
+    if ((fishes.countActive(true) === 0) && (hams.countActive(true) === 0) && pickupCount < 80) {
 
         fishes.children.iterate(function (child) {
           child.enableBody(true, child.x, 0, true, true);
