@@ -72,7 +72,7 @@ function create ()
     //  Input Events
     cursors = this.input.keyboard.createCursorKeys();
 
-    var random = Math.floor(Math.random() * 11) + 1;
+    var random = Math.floor(Math.random() * 10) + 1;
     
 
     var fishCount = random;
