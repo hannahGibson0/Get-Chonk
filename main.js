@@ -142,7 +142,6 @@ function pickupFood (player, food)
 {
     
     pickupCount += 1;
-    console.log(pickupCount);
     food.disableBody(true, true);
 
     currentScale += 0.25;
